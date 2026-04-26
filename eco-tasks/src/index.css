@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+/* ─── Enviro Template Design System ─────────────────────────────
+   Palette from Enviro Webflow template (enviro-webflow-website-template.webflow.io)
+   Primary:      #063232  Dark Teal
+   Secondary:    #2B5151  Medium Teal
+   Accent:       #E3572B  Orange
+   Light Green:  #C2DF93
+   Background:   #ECF8F8  Very Light Teal
+   Gray:         #E5E5E5
+   White:        #FFFFFF
+   Font:         Inter
+─────────────────────────────────────────────────────────────── */
+
+:root {
+  --e-dark:       #063232;
+  --e-medium:     #2B5151;
+  --e-orange:     #E3572B;
+  --e-green:      #C2DF93;
+  --e-bg:         #ECF8F8;
+  --e-gray:       #E5E5E5;
+  --e-white:      #FFFFFF;
+  --e-text:       #0A2222;
+  --e-muted:      #4A6B6B;
+  --e-border:     #D0E9E9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: var(--e-bg);
+  min-height: 100vh;
+  color: var(--e-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.pb-safe {
+  padding-bottom: max(12px, env(safe-area-inset-bottom));
+}
+
+/* ─── Enviro Card Base ─── */
+.enviro-card {
+  background: var(--e-white);
+  border: 1px solid var(--e-border);
+  border-radius: 16px;
+  box-shadow: 0 1px 3px rgba(6, 50, 50, 0.06);
+}
+
+/* ─── Enviro Dark Card (for hero/banner sections) ─── */
+.enviro-card-dark {
+  background: linear-gradient(135deg, var(--e-dark) 0%, var(--e-medium) 100%);
+  border-radius: 16px;
+}
+
+/* ─── Category bracket label (Enviro style) ─── */
+.enviro-tag::before { content: '['; }
+.enviro-tag::after  { content: ']'; }
+
+/* ─── Bottom nav badge pulse ─── */
+@keyframes enviro-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.7; transform: scale(1.2); }
+}
+.badge-pulse { animation: enviro-pulse 2s infinite; }
+
+/* ─── Streak progress bar shimmer ─── */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.progress-shimmer {
+  background: linear-gradient(
+    90deg,
+    #C2DF93 0%,
+    #90c75a 40%,
+    #C2DF93 80%
+  );
+  background-size: 200% auto;
+  animation: shimmer 2.5s linear infinite;
+}
+
+/* ─── Leaflet z-index fix ─── */
+.leaflet-container {
+  z-index: 0;
+}
+.leaflet-pane,
+.leaflet-control {
+  z-index: 1 !important;
+}
+
+/* ─── Smooth card hover ─── */
+.task-card-hover {
+  transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+.task-card-hover:hover {
+  box-shadow: 0 4px 16px rgba(6, 50, 50, 0.12);
+  transform: translateY(-1px);
+}
+
+/* ─── Inter numeric tabular ─── */
+.tabular { font-variant-numeric: tabular-nums; }

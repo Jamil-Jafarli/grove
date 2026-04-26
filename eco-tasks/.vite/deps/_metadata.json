@@ -1,0 +1,66 @@
+{
+  "hash": "7991e4da",
+  "configHash": "2778fe65",
+  "lockfileHash": "e4b53637",
+  "browserHash": "f594113c",
+  "optimized": {
+    "@capacitor/core": {
+      "src": "../../node_modules/@capacitor/core/dist/index.js",
+      "file": "@capacitor_core.js",
+      "fileHash": "797d1219",
+      "needsInterop": false
+    },
+    "@capacitor/local-notifications": {
+      "src": "../../node_modules/@capacitor/local-notifications/dist/esm/index.js",
+      "file": "@capacitor_local-notifications.js",
+      "fileHash": "58f30a45",
+      "needsInterop": false
+    },
+    "leaflet": {
+      "src": "../../node_modules/leaflet/dist/leaflet-src.js",
+      "file": "leaflet.js",
+      "fileHash": "e4a05611",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "1db19bc0",
+      "needsInterop": true
+    },
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "02dcd470",
+      "needsInterop": true
+    },
+    "react/jsx-dev-runtime": {
+      "src": "../../node_modules/react/jsx-dev-runtime.js",
+      "file": "react_jsx-dev-runtime.js",
+      "fileHash": "cc275081",
+      "needsInterop": true
+    },
+    "zustand": {
+      "src": "../../node_modules/zustand/esm/index.mjs",
+      "file": "zustand.js",
+      "fileHash": "f14dbe31",
+      "needsInterop": false
+    },
+    "zustand/middleware": {
+      "src": "../../node_modules/zustand/esm/middleware.mjs",
+      "file": "zustand_middleware.js",
+      "fileHash": "78252734",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-CO3PsZeE": {
+      "file": "chunk-CO3PsZeE.js",
+      "isDynamicEntry": false
+    },
+    "web-CA5sItdw": {
+      "file": "web-CA5sItdw.js",
+      "isDynamicEntry": true
+    }
+  }
+}
