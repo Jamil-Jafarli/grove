@@ -46,7 +46,7 @@ export default function EcoFactCard() {
             className="text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-md"
             style={{ background: 'var(--e-dark)', color: 'var(--e-green)' }}
           >
-            [Günün Bilgisi]
+            Günün maraqlı faktı
           </span>
           <span
             className="text-[11px] font-semibold px-2 py-0.5 rounded-md"
@@ -91,7 +91,7 @@ export default function EcoFactCard() {
           border: '1px solid var(--e-border)',
         }}
       >
-        🔄 Başqa bir bilgi
+        🔄 Digər bir fakt
       </button>
     </div>
   );

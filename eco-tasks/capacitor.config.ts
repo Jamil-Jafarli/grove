@@ -5,8 +5,8 @@ const config: CapacitorConfig = {
   appName: 'Grove',
   webDir: 'dist',
   server: {
-    // APK içindəki WebView bu URL-ə proxy edər
-    androidScheme: 'https',
+      url: 'http://74.162.68.66:5173', // sənin dev server IP + port
+      cleartext: true
   },
   android: {
     buildOptions: {

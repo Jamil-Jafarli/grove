@@ -1,3 +1,5 @@
+import seedImg from '../assets/seed.svg';
+
 interface Props {
   streak: number;
   monthlyDays: number;
@@ -24,7 +26,7 @@ function getStreakLabel(streak: number): string {
 }
 
 export default function StreakBanner({ streak, monthlyDays, completedToday, totalToday }: Props) {
-  const progress = totalToday > 0 ? (completedToday / totalToday) * 100 : 0;
+  const progress = totalToday > 0 ? Math.min(100, (completedToday / totalToday) * 100) : 0;
   const icon = getStreakIcon(streak);
   const label = getStreakLabel(streak);
   const allDone = progress === 100;
@@ -43,7 +45,9 @@ export default function StreakBanner({ streak, monthlyDays, completedToday, tota
               className="w-14 h-14 rounded-xl flex items-center justify-center text-3xl shadow-inner"
               style={{ background: 'rgba(194,223,147,0.15)', border: '1px solid rgba(194,223,147,0.25)' }}
             >
-              {icon}
+              {streak === 0
+                ? <img src={seedImg} alt="toxum" className="w-9 h-9" />
+                : icon}
             </div>
             <div>
               <div className="text-4xl font-extrabold text-white tabular leading-none">{streak}</div>
@@ -89,7 +93,7 @@ export default function StreakBanner({ streak, monthlyDays, completedToday, tota
       >
         <div className="flex justify-between items-center mb-1.5">
           <span className="text-xs font-medium" style={{ color: 'rgba(255,255,255,0.65)' }}>Günlük irəliləyiş</span>
-          <span className="text-xs font-bold" style={{ color: '#C2DF93' }}>{Math.round(progress)}%</span>
+          <span className="text-xs font-bold" style={{ color: '#C2DF93' }}>{completedToday}/{totalToday}</span>
         </div>
 
         <div className="w-full rounded-full h-2 overflow-hidden" style={{ background: 'rgba(255,255,255,0.12)' }}>

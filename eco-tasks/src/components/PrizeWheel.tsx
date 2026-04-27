@@ -158,7 +158,7 @@ function WheelCard({ tier, coinBalance, onSpend }: WheelCardProps) {
               : 'bg-gray-100 text-gray-400 cursor-not-allowed'
           }`}
         >
-          {spinning ? 'Çevrilir...' : coinBalance < tier ? `${(tier - coinBalance).toLocaleString()} 🪙 çatışmır` : `${tier.toLocaleString()} 🪙 Çevir`}
+          {spinning ? 'Çevrilir...' : coinBalance < tier ? `${(tier - coinBalance).toLocaleString()} 🪙 çatmır` : `${tier.toLocaleString()} 🪙 Çevir`}
         </button>
       </div>
     </div>

@@ -40,8 +40,20 @@ export default function App() {
   const [showCreatePost, setShowCreatePost] = useState(false);
   const [showNotifications, setShowNotifications] = useState(false);
   const [unreadCount, setUnreadCount] = useState(0);
+  const [currentDate, setCurrentDate] = useState(() => new Date().toISOString().slice(0, 10));
   const { user, token } = useAuthStore();
   const { streak, monthlyDays, history, completeTask, getDay, syncWithDB, getDailyAssignment } = useEcoStore();
+
+  useEffect(() => {
+    const checkDateChange = setInterval(() => {
+      const newDate = new Date().toISOString().slice(0, 10);
+      if (newDate !== currentDate) {
+        setCurrentDate(newDate);
+        syncWithDB();
+      }
+    }, 60000);
+    return () => clearInterval(checkDateChange);
+  }, [currentDate, syncWithDB]);
 
   // Bildiriş kanalını yarat (Android üçün)
   useEffect(() => {
@@ -71,7 +83,7 @@ export default function App() {
 
   if (!user) return <AuthScreen />;
 
-  const today = new Date().toISOString().slice(0, 10);
+  const today = currentDate;
   const assignedIds = getDailyAssignment(today, user.id);
   const dailyTasks = assignedIds.map(id => ALL_TASKS.find(t => t.id === id)!).filter(Boolean);
   const dayRecord = getDay(today);

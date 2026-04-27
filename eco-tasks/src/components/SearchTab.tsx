@@ -389,7 +389,7 @@ export default function SearchTab({ onCreateRequest }: SearchTabProps) {
       {!debouncedQuery.trim() && (
         <>
           <div className="flex items-center justify-between">
-            <h2 className="text-sm font-bold text-gray-500 uppercase tracking-wide">Anlık paylaşımlar</h2>
+            <h2 className="text-sm font-bold text-gray-500 uppercase tracking-wide">Anlıq paylaşımlar</h2>
           </div>
           {postsLoading ? (
             <div className="text-center py-12 text-gray-400">Yüklənir...</div>

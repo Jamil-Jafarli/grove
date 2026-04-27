@@ -77,7 +77,7 @@ export default function ProfileTab() {
     { id: 'overview',    icon: '🏠', label: 'Ümumi' },
     { id: 'posts',       icon: '📝', label: 'Paylaşımlar' },
     { id: 'leaderboard', icon: '🏆', label: 'Liderlik' },
-    { id: 'settings',    icon: '⚙️', label: 'Tənzimlər' },
+    { id: 'settings',    icon: '⚙️', label: 'Tənzimləmələr' },
   ];
 
   useEffect(() => {
@@ -230,7 +230,7 @@ export default function ProfileTab() {
       {/* Settings */}
       {section === 'settings' && (
         <div className="bg-white rounded-2xl border border-gray-100 p-5 shadow-sm space-y-4">
-          <h3 className="font-bold text-gray-800">Profil tənzimləri</h3>
+          <h3 className="font-bold text-gray-800">Profil tənzimləmələri</h3>
 
           {/* Privacy toggle */}
           <div className="flex items-center justify-between py-3 border-b border-gray-100">
